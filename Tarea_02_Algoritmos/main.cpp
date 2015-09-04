@@ -38,7 +38,7 @@ void bucketSort(int v[], const int N);
 void merge(int v[], int l, int m, int n, int N);
 void mergeSort(int v[], int l, int n, int N);
 //BinarySort
-void binarySort(int a[], int N);
+void binarySort(int v[], int N);
 //Radix
 int getMax(int v[], int N);
 void countSort(int v[], int N, int exp);
@@ -338,11 +338,11 @@ void inOrder(Node* node, vector<int>& a)
         inOrder(node->right, a);
     }
 }
-void binarySort(int a[], int N)
+void binarySort(int v[], int N)
 {
     Node* root = nullptr;
     for (int i = 0; i < N; ++i)
-        insert(root, a[i]);
+        insert(root, v[i]);
     
     vector<int> aux;
     inOrder(root, aux);
@@ -350,7 +350,7 @@ void binarySort(int a[], int N)
     Node::destroy(root);
     
     for (int i = 0; i < aux.size(); ++i)
-        a[i] = aux[i];
+        v[i] = aux[i];
 }
 
 //Radix
